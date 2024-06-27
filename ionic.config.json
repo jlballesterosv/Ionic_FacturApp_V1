@@ -1,0 +1,7 @@
+{
+  "name": "FacturApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
