@@ -28,7 +28,7 @@ export class Tab1Page {
   }
 
   guardarProducto(){
-    
+    console.log("En este momento estoy guardando")
   }
 
 }
