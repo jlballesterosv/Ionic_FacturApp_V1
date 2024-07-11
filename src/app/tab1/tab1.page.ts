@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
+import { ProductosService } from '../services/productos.service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,7 +13,9 @@ export class Tab1Page {
 
   form: any;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, 
+              private productosService:ProductosService,
+              private alertController:AlertController) {}
 
   ngOnInit(){
     this.crearFormulario();
@@ -29,6 +33,18 @@ export class Tab1Page {
 
   guardarProducto(){
     console.log("En este momento estoy guardando")
+    console.log(this.form.value)
+    this.productosService.guardarProductos(this.form.value).subscribe(
+      (res) => {        
+        console.log(res)
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
   }
+
+
+
 
 }

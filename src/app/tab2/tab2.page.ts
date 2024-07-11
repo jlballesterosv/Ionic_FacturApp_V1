@@ -15,7 +15,7 @@ export class Tab2Page {
   }
   
   async cargarProductos() {
-    this.productosService.getProductos().subscribe(
+    this.productosService.obtenerProductos().subscribe(
       (res) => {
         this.productos.push(res);
         console.log(this.productos)
